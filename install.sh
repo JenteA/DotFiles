@@ -23,8 +23,15 @@ function i3 {
 
 #}
 
-#function st {
+function st {
+    cp st/config.h ~/Downloads/
+    cd ~/Downloads
+    git clone http://git.suckless.org/st
+    mv ~/Downloads/config.h ~/Downloads/st/
+    cd ~/Downloads/st/
+    make clean
+    make
+    sudo make install
+}
 
-#}
-
-i3
+st
