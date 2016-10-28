@@ -1,0 +1,1 @@
+SudoEdit-0.21.vmb: call delete('/home/jente/.vim/autoload/SudoEdit.vim')|call delete('/home/jente/.vim/doc/SudoEdit.txt')|call delete('/home/jente/.vim/plugin/SudoEdit.vim')|call delete('/home/jente/.vim/autoload/sudo.cmd')|call delete('/home/jente/.vim/autoload/SudoEdit.vbs')
