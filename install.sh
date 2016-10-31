@@ -34,7 +34,7 @@ function lightdm {
     pacaur -S gtk-theme-arc
     systemctl enable lightdm
     cp lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
-    cp lightdm/background.jpg /usr/share/
+    cp lightdm/background.jpg /usr/share/backgrounds/
 }
 
 #install st and add config file
@@ -49,6 +49,16 @@ function st {
     sudo make install
     cd ..
     rm -rf st
+}
+
+#install zsh
+function zsh{
+
+}
+
+#Basic install
+function main {
+
 }
 
 pacaur
