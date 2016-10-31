@@ -28,9 +28,14 @@ function pacaur {
     rm pacaur*.tar.xz
 }
 
-#function lightdm {
-
-#}
+#install lightdm and config file
+function lightdm {
+    sudo pacman -S lightdm lightdm-gtk-greeter
+    pacaur -S gtk-theme-arc
+    systemctl enable lightdm
+    cp lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
+    cp lightdm/background.jpg /usr/share/
+}
 
 #install st and add config file
 function st {
