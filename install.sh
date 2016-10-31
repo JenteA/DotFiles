@@ -73,4 +73,9 @@ function main {
     echo %wheel ALL=(ALL) ALL | sudo tee --append /etc/sudoers > /dev/null
 }
 
+main
 pacaur
+zsh
+lightdm
+i3
+st
