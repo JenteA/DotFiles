@@ -53,7 +53,15 @@ function st {
 
 #install zsh
 function zsh{
-
+    pacman -S zsh zsh-completions
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    cd ~/Downloads
+    git https://github.com/powerline/fonts.git
+    cd fonts
+    sudo ./install.sh
+    cd ..
+    rm -rf fonts
+    cp zsh/.zshrc ~/
 }
 
 #Basic install
