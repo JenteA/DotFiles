@@ -66,7 +66,11 @@ function zsh{
 
 #Basic install
 function main {
-
+    pacman -Syu
+    pacman -S sudo xorg-server xorg-server-utils xf86-video-ati lib32-mesa-libgl firefox curl htop libreoffice-fresh pulseaudio ntfs-3g banshee udisks2 udiskie base base-devel
+    useradd -m -G wheel, users -s /bin/bash jente
+    passwd jente
+    echo %wheel ALL=(ALL) ALL | sudo tee --append /etc/sudoers > /dev/null
 }
 
 pacaur
