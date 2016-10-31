@@ -15,14 +15,24 @@ function i3 {
     rm -rf YosemiteSanFranciscoFont
 }
 
-#function pacaur {
-
-#}
+#install pacaur
+function pacaur {
+    cd ~/Downloads
+    curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
+    makepkg PKGBUILD --skippgpcheck
+    sudo pacman -U cower*.tar.xz --noconfirm
+    curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
+    makepkg PKGBUILD
+    sudo pacman -U pacaur*.tar.xz --noconfirm
+    rm cower*.tar.xz
+    rm pacaur*.tar.xz
+}
 
 #function lightdm {
 
 #}
 
+#install st and add config file
 function st {
     cp st/config.h ~/Downloads/
     cd ~/Downloads
@@ -32,6 +42,8 @@ function st {
     make clean
     make
     sudo make install
+    cd ..
+    rm -rf st
 }
 
-st
+pacaur
