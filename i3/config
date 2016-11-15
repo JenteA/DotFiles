@@ -201,7 +201,6 @@ exec_always feh --bg-scale /home/jente/Afbeeldingen/wallpaper.jpg
 exec_always compton
 exec firefox
 exec Telegram
-exec banshee
 exec blueman-applet
 exec udiskie
 
