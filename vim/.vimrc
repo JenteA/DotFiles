@@ -8,6 +8,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'Sirver/ultisnips'
+
+Plugin 'honza/vim-snippets'
+
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
@@ -52,4 +56,10 @@ nnoremap <leader>sr :SudoRead
 " use SudoWrite
 nnoremap <leader>sw :SudoWrite
 
-
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
