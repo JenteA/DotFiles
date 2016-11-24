@@ -14,6 +14,8 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'https://github.com/Valloric/YouCompleteMe'
 
+Plugin 'https://github.com/chrisbra/SudoEdit.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
