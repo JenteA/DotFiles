@@ -49,14 +49,11 @@ set lazyredraw
 " highlight matching parenthesis
 set showmatch
 
-" toggle gundo
-nnoremap <leader>u :GundoToggle<CR>
-
 " use SudoRead
-nnoremap <leader>sr :SudoRead
+:nnoremap <leader>sr :SudoRead
 
 " use SudoWrite
-nnoremap <leader>sw :SudoWrite
+:nnoremap <leader>sw :SudoWrite
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
@@ -65,3 +62,8 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+"Latex Settings
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor = 'latex'
+:nnoremap <F2> :!latexmk -pdflatex='pdflatex -file-line-error -synctex=1 -interaction=nonstopmode' -bibtex -pdf $ *
