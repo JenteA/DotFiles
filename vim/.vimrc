@@ -68,4 +68,7 @@ let g:UltiSnipsEditSplit="vertical"
 "Latex Settings
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = 'latex'
-:nnoremap <F2> :!latexmk -pdflatex='pdflatex -file-line-error -synctex=1 -interaction=nonstopmode' -bibtex -pdf $ *
+map <F10> :execute '!pdflatex ' . shellescape(expand('%'), 1) . ' && start ' . shellescape(expand('%:r') . '.pdf', 1)<CR>
+
+"set spell checking language
+setlocal spelllang=nl
