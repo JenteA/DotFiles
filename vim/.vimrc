@@ -12,13 +12,18 @@ Plugin 'Sirver/ultisnips'
 
 Plugin 'honza/vim-snippets'
 
-Plugin 'https://github.com/Valloric/YouCompleteMe'
+"Plugin 'https://github.com/Valloric/YouCompleteMe'
 
 Plugin 'https://github.com/chrisbra/SudoEdit.vim'
+
+Plugin 'flazz/vim-colorschemes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
+
+" Set leader key to ;
+let mapleader=";"
 
 "set colorscheme
 colorscheme molokai
@@ -52,10 +57,10 @@ set lazyredraw
 set showmatch
 
 " use SudoRead
-:nnoremap <leader>sr :SudoRead
+:nnoremap <leader>sr :SudoRead<CR>
 
 " use SudoWrite
-:nnoremap <leader>sw :SudoWrite
+:nnoremap <leader>sw :SudoWrite<CR>
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
@@ -68,7 +73,8 @@ let g:UltiSnipsEditSplit="vertical"
 "Latex Settings
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = 'latex'
-map <F10> :execute '!pdflatex ' . shellescape(expand('%'), 1) . ' && start ' . shellescape(expand('%:r') . '.pdf', 1)<CR>
+map <F10> :!pdflatex % <CR>
 
-"set spell checking language
+"set spell checking language and spellchecking
 setlocal spelllang=nl
+map <F2> :set spell<CR>
