@@ -79,7 +79,21 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias school="/mnt/d/Schooljaar16-17/"
+#alias school="/mnt/d/Schooljaar16-17/"
 
 # Set spelling check
 setopt correct
+
+# set virtualenv python
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
+
+autoload bashcompinit && bashcompinit
+eval "$(_PLATFORMIO_COMPLETE=source platformio)"
+#eval "$(_PLATFORMIO_COMPLETE=source pio)"
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
