@@ -36,6 +36,11 @@ let g:molokai_original = 1
 "enable syntax highlighting
 syntax enable
 
+" search case incensitive only first letter and highlight search results
+set ignorecase
+set smartcase
+set hlsearch
+
 "number of visual spaces per TAB
 set tabstop=4
 
