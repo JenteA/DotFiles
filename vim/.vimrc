@@ -22,6 +22,8 @@ Plugin 'https://github.com/scrooloose/nerdtree.git'
 
 Plugin 'https://github.com/majutsushi/tagbar'
 
+Plugin 'rust-lang/rust.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
@@ -114,8 +116,17 @@ let g:UltiSnipsEditSplit="vertical"
 "Latex Settings
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = 'latex'
-map <F10> :!pdflatex % <CR>
-
+map <F10> :call CompileAndOpenLatex() <CR>
 "set spell checking language and spellchecking
 setlocal spelllang=nl
 map <F2> :set spell<CR>
+
+function CompileAndOpenLatex()
+    silent :!xelatex %
+    let g:filename= expand("%<.pdf").".pdf"
+    let open=system('ps -fe | grep "okular ' . expand(g:filename)  .'" | grep -vc grep')
+    if open == 0
+        let pdf = job_start("okular " .expand(g:filename))
+    endif
+    :redraw!
+endfunction
