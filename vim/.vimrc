@@ -121,6 +121,9 @@ map <F10> :call CompileAndOpenLatex() <CR>
 setlocal spelllang=nl
 map <F2> :set spell<CR>
 
+"This function compiles Latex files
+"and opens pdf in okular
+"if pdf is already open the function doesn't open okular anymore
 function CompileAndOpenLatex()
     silent :!xelatex %
     let g:filename= expand("%<.pdf").".pdf"
