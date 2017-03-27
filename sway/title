@@ -1,0 +1,23 @@
+#!/usr/bin/python
+
+import sys,json,subprocess
+
+def main():
+    bashCommand = "swaymsg -t get_tree"
+    process = subprocess.check_output(bashCommand.split())
+    data = json.loads(process)
+    data = data["nodes"][0]["nodes"]
+    Searchjson(data)
+
+def Searchjson(d):
+    for item in enumerate(d):
+        for workspace in item:
+            if type(workspace) is dict:
+                for k,v in workspace.items():
+                    if k == "nodes":
+                        for window in v:
+                            if window["focused"] == True:
+                                print(window["name"])
+
+if __name__ == '__main__':
+    main()

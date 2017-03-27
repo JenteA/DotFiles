@@ -1,0 +1,7 @@
+rofi.color-enabled: true
+rofi.color-window: #2f343f, #2f343f, #2f343f
+rofi.color-normal: #2f343f, #f3f4f5, #2f343f, #586e75, #f3f4f5
+rofi.color-active: #2f343f, #f3f4f5, #2f343f, #586e75, #f3f4f5
+rofi.color-urgent: #e53935, #f3f4f5, #e53935, #aa2927, #f3f4f5
+
+rofi.modi:Clerk:~/.config/sway/clerk.sh
