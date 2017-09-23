@@ -52,7 +52,7 @@ function st {
 }
 
 #install zsh
-function zsh{
+function zsh {
     pacman -S zsh zsh-completions
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     cd ~/Downloads

@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/jente/.oh-my-zsh
+export ZSH=/home/jente/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -44,7 +44,7 @@ COMPLETION_WAITING_DOTS="true"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd.mm.yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -53,7 +53,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( web-search)
+plugins=(web-search zsh-autosuggestions zsh-syntax-highlighting colorize zsh-history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,24 +76,35 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias cat="colorize"
 
 #alias school="/mnt/d/Schooljaar16-17/"
 
+# ignore duplicates in history
+setopt HIST_IGNORE_ALL_DUPS
 # Set spelling check
 setopt correct
 
 # set virtualenv python
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+#export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+#export WORKON_HOME=~/.virtualenvs
+#source /usr/bin/virtualenvwrapper.sh
 
-autoload bashcompinit && bashcompinit
-eval "$(_PLATFORMIO_COMPLETE=source platformio)"
+#autoload bashcompinit && bashcompinit
+#eval "$(_PLATFORMIO_COMPLETE=source platformio)"
 #eval "$(_PLATFORMIO_COMPLETE=source pio)"
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+export PATH=$PATH:/home/jente/.gem/ruby/2.4.0/bin
+
+bindkey "^[[Z" autosuggest-accept 
+
+#Wine Steam
+export WINEDEBUG=-all
+alias steam-wine='wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe >/dev/null 2>&1 &'
